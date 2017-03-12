@@ -13,43 +13,43 @@ Vagrant.configure("2") do |config|
   config.vm.define "manager1" do |manager1|
 	manager1.vm.hostname = "manager1"
 	manager1.vm.box = "centos/7"
-	manager1.vm.network "private_network", type: "dhcp"
-	manager1.vm.provision "shell", path: "provi.sh"
+	manager1.vm.network "private_network", ip: "192.168.1.21"
+	manager1.vm.provisionsion "shell", path: "provision.sh"
 	end
 
   config.vm.define "manager2" do |manager2|
 	manager2.vm.hostname = "manager2"
 	manager2.vm.box = "centos/7"
-	manager2.vm.network "private_network", type: "dhcp"
-	manager2.vm.provision "shell", path: "provi.sh"
+	manager2.vm.network "private_network", ip: "192.168.1.22"
+	manager2.vm.provisionsion "shell", path: "provision.sh"
 	end
 
   config.vm.define "manager3" do |manager3|
 	manager3.vm.hostname = "manager3"
 	manager3.vm.box = "centos/7"
-	manager3.vm.network "private_network", type: "dhcp"
-	manager3.vm.provision "shell", path: "provi.sh"
+	manager3.vm.network "private_network", ip: "192.168.1.23"
+	manager3.vm.provisionsion "shell", path: "provision.sh"
 	end
 
   config.vm.define "node1" do |node1|
 	node1.vm.hostname = "node1"
 	node1.vm.box = "centos/7"
-	node1.vm.network "private_network", type: "dhcp"
-	node1.vm.provision "shell", path: "provi.sh"
+	node1.vm.network "private_network", ip: "192.168.1.31"
+	node1.vm.provisionsion "shell", path: "provision.sh"
 	end
 
   config.vm.define "node2" do |node2|
 	node2.vm.hostname = "node2"
 	node2.vm.box = "centos/7"
-	node2.vm.network "private_network", type: "dhcp"
-	node2.vm.provision "shell", path: "provi.sh"
+	node2.vm.network "private_network", ip: "192.168.1.32"
+	node2.vm.provisionsion "shell", path: "provision.sh"
 	end
 
   config.vm.define "node3" do |node3|
 	node3.vm.hostname = "node3"
 	node3.vm.box = "centos/7"
-	node3.vm.network "private_network", type: "dhcp"
-	node3.vm.provision "shell", path: "provi.sh"
+	node3.vm.network "private_network", ip: "192.168.1.33"
+	node3.vm.provisionsion "shell", path: "provision.sh"
 	end
 
   # Disable automatic box update checking. If you disable this, then
@@ -78,11 +78,11 @@ Vagrant.configure("2") do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
+  # provisionder-specific configuration so you can fine-tune various
+  # backing provisionders for Vagrant. These expose provisionder-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  # config.vm.provisionder "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
@@ -90,7 +90,7 @@ Vagrant.configure("2") do |config|
   #   vb.memory = "1024"
   # end
   #
-  # View the documentation for the provider you are using for more
+  # View the documentation for the provisionder you are using for more
   # information on available options.
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
@@ -100,10 +100,10 @@ Vagrant.configure("2") do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 
-  # Enable provisioning with a shell script. Additional provisioners such as
+  # Enable provisionsioning with a shell script. Additional provisionsioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
+  # config.vm.provisionsion "shell", inline: <<-SHELL
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
